@@ -1,0 +1,7 @@
+{
+    "name": "nodejspractice",
+    "version": "1.0.0",
+    "scripts": {
+      "start": "angularreactiveapi.js"   
+    }
+  }
