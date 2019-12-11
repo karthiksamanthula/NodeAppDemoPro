@@ -12,11 +12,21 @@ app.use(cors());
 app.use(express.json());       // to support JSON-encoded bodies
 
 
-const connectionString = 'postgres://postgres:Otsi@123@localhost:5432/nodejs';
-var results = [];
+// const connectionString = 'postgres://postgres:Otsi@123@localhost:5432/nodejs';
+// const client = new pg.Client(connectionString);
+// client.connect();
 
-const client = new pg.Client(connectionString);
-client.connect();
+// const connectionString = 'postgres://grksqfnrzccpin:e84d31f33f9517ebfc77b0e36610a578148e3f87360b97ec8c7988ea789a062e@ec2-54-225-115-177.compute-1.amazonaws.com:5432/deu0q6d19bjbp9';
+var results = [];
+const client = new pg.Client({
+    user: 'grksqfnrzccpin',
+    host: 'ec2-54-225-115-177.compute-1.amazonaws.com',
+    database: 'deu0q6d19bjbp9',
+    password: 'e84d31f33f9517ebfc77b0e36610a578148e3f87360b97ec8c7988ea789a062e',
+    port: 5432,
+    ssl: true
+  })
+  client.connect()
 
 router.get('/getdbvalues', (req, res) => {
 
