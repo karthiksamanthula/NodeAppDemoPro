@@ -30,6 +30,9 @@ const client = new pg.Client({
   })
   client.connect()
 
+router.get('/',(req,res,err)=>{
+    res.json({connected:'success'})
+})
 
 
 router.get('/getdbvalues', (req, res) => {
