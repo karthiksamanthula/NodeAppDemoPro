@@ -18,6 +18,8 @@ app.use(express.json());       // to support JSON-encoded bodies
 
 // const connectionString = 'postgres://grksqfnrzccpin:e84d31f33f9517ebfc77b0e36610a578148e3f87360b97ec8c7988ea789a062e@ec2-54-225-115-177.compute-1.amazonaws.com:5432/deu0q6d19bjbp9';
 var results = [];
+
+const port = process.env.PORT || 2020;
 const client = new pg.Client({
     user: 'grksqfnrzccpin',
     host: 'ec2-54-225-115-177.compute-1.amazonaws.com',
@@ -27,6 +29,8 @@ const client = new pg.Client({
     ssl: true
   })
   client.connect()
+
+
 
 router.get('/getdbvalues', (req, res) => {
 
@@ -168,6 +172,8 @@ router.post('/checkmailinsert', (req, res) => {
                     }
                     else
                     {
+                        console.log(res);
+                        
                         res.json('stored in db')
                     }
                 },1000)
@@ -353,4 +359,8 @@ router.get('/dropdown/cities/:varid',(req,res,)=>{
 
 app.use('/', router)
 
-    .listen(2020)
+// app.listen(2020)
+
+app.listen(port,() => {
+    console.log("Port is running on", port);
+});
