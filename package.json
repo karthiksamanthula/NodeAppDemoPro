@@ -1,7 +1,16 @@
+
 {
-    "name": "nodejspractice",
-    "version": "1.0.0",
-    "scripts": {
-      "start": "node angularreactiveapi.js"   
-    }
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node angularreactiveapi.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
   }
+}
